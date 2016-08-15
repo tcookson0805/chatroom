@@ -1,0 +1,125 @@
+html {
+  height: 100%;
+}
+
+
+body {
+  background-color: gray;
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+}
+
+.hero {
+  background-color: #3b5998;
+  height: 100%;
+}
+
+
+
+
+.sign-in {
+  font-size: 1.5em;
+  border: 0.1em black solid;
+  border-radius: 1em;
+  height: 10em;
+  
+  /* vertically aligning*/
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);  
+}
+
+.shadow {
+    /*border shading*/
+  -moz-box-shadow:    1px 1px 1px 2px #454443;
+  -webkit-box-shadow: 1px 1px 1px 2px #454443;
+  box-shadow:         1px 1px 1px 2px #454443;
+}
+
+.sign-in_header {
+  text-align: center;
+  padding: 1em;
+}
+
+.sign-in_input {
+/*  height: 3.5em;*/
+  font-size: 1.5em;
+  padding: 0.7em;
+  text-align: center;
+}
+
+.opaque {
+  background: linear-gradient( rgba(250, 250, 250, 0.3), rgba(250, 250, 250, 0.3) );
+}
+
+
+
+
+/* Messenger APP */
+
+.template {
+  display: none;
+}
+
+.messenger {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}
+
+.left-panel {
+  height: 100%;
+}
+
+.left-panel-header {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 0.1em solid black;
+}
+
+.left-panel-main {
+  
+}
+
+.user {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.main-panel {
+  height: 100%;
+}
+
+.main-panel-header {
+  height: 5%;
+}
+
+.message-content {
+  background-color: white;
+  border-radius: 0.5em;
+  height: 80%;
+}
+
+.message-box {
+  height: 15%;
+}
+
+.message-form {
+  padding: 2em;
+}
+
+.message-input {
+  
+}
+
+
+
+
+
+

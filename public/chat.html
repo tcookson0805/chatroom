@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chatroom</title>
+  
+ <link rel='stylesheet' href='/css/bootstrap.min.css' />
+ <link rel='stylesheet' href='/css/main.css' />
+  
+</head>
+
+<body class='container'>
+
+  <div class = 'row'>
+    
+    <div class='col-xs-12 header'>
+      Log in Stuff
+    </div>
+    
+  </div>
+  
+  <div class='row hero'>
+    <div class='col-xs-3 online'>
+      users online
+    </div>
+    
+    <div class='col-xs-6 message-board'>
+      
+      <div class='row text-input'>
+        <div class='col-xs-12'>
+          <input type='text'>
+        </div>
+      </div>
+      
+      <div class='row messages'>
+        <div class='col-xs-12' id='messages'>
+  
+        </div>
+      </div>
+      
+    </div>
+    
+    <div class='col-xs-3 private-message-board'>
+      Private Messages
+    </div>
+  </div>
+  
+  
+
+
+
+    
+
+    
+
+    
+    
+    
+  </section>
+
+  <section>
+
+  </section>
+
+
+
+
+  <section>
+    <div id='messages'></div>
+  </section>
+
+  
+  
+  
+  
+    <!-- JavaScript -->
+  <script src='//code.jquery.com/jquery-2.1.0.js'></script>
+  <!-- connecting to server on client side...Socket.IO serves the client library at /socket.io/socket.io.js -->
+  <script src='/socket.io/socket.io.js'></script>
+  <script src='//underscorejs.org/underscore.js'></script>
+  <script src='./js/main.js'></script>
+
+</body>
+</html>
