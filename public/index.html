@@ -11,83 +11,62 @@
 
 <body>
 
-<div class='container'>
+  <div class='container'>
 
-    <div class='row hero'>
-      
-        <div class='col-xs-4 col-xs-offset-4 sign-in shadow opaque'>
-          <div class='sign-in_header'>
-            Enter Screen Name Below....
-          </div>
-          
-          <form class="form-horizontal sign-in_form">
-            <div class="form-group row">
-              <!-- <label for="inputEmail3" class="col-sm-4 control-label">Screen Name</label> -->
-              <div class="col-sm-10 col-sm-offset-1">
-                <input type="screenName" class="form-control sign-in_input" id="inputEmail3" placeholder="abc123">
-              </div>
-            </div>
-            <div class="form-group row">
-              <div class="col-sm-offset-4 col-sm-4">
-                <button type="submit" class="btn btn-primary btn-lg shadow">Submit</button>
-              </div>
-            </div>
-          </form>
-          
-        </div>
-      </div>
-   
- </div>
-   
-</div>   
-    
-
-<!-- Template -->
-
-<div class='template'>
-
-  <div class='messenger'>
-    
-    <div class='col-xs-3 left-panel'>
-      
-      <div class='left-panel-header'>
-        Users Online
-      </div>
-      
-      <div class='left-panel-main'>
-        <!-- <div class='user'>Joe Blow</div> -->
-      </div>
-      
-    </div>
-    
-    <div class='col-xs-8 main-panel'>
-      
-      
-      
-      <div class='row main-panel-header'>
-        <div class='col-xs-12'> Logged in as : <span class='username'></span></div>
-      </div>
-      
-      <div class='row message-content'>
-        <div class='col-xs-12' id='messages'>
+      <div class='row hero'>
         
+          <div class='col-xs-4 col-xs-offset-4 sign-in shadow opaque'>
+            <div class='sign-in_header'>Enter Screen Name Below....</div>
+            
+            <form class="form-horizontal sign-in_form">
+              <div class="form-group row">
+                <div class="col-sm-10 col-sm-offset-1">
+                  <input type="screenName" class="form-control sign-in_input" id="inputEmail3" placeholder="abc123">
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-offset-4 col-sm-4">
+                  <button type="submit" class="btn btn-primary btn-lg shadow">Submit</button>
+                </div>
+              </div>
+            </form> 
+          </div>
+    </div> 
+  </div>   
+    
+
+  <!-- Template -->
+
+  <div class='template'>
+
+    <div class='messenger'>
+    
+      <div class='col-xs-3 left-panel'>
+        <div class='left-panel-header'>Users Online: <span class='users_online'></span></div>
+        <div class='left-panel-main'></div>
+      </div>
+      
+      <div class='col-xs-8 main-panel'>
+        <div class='row main-panel-top'>
+          <div class='col-xs-12 main-panel-header'> Logged in as : <span class='header-username'></span></div>
         </div>
-      </div>
-      
-      <div class='row message-box'>
-       <div class='col-xs-12'>
-         <div class='message-form'>
-           <input class='form-control message-input' type='text' />    
+        
+        <div class='row message-content'>
+          <div class='col-xs-12' id='messages'>
+            <div class='col-xs-6' id='messages_left'></div>
+            <div class='col-xs-6' id='messages_right'></div>
+          </div>
+        </div>
+        
+        <div class='row message-box'>
+         <div class='col-xs-12 message-form'>
+             <input class='form-control message-input' type='text' />    
          </div>
-         
-       </div>
-      </div>
-      
-    </div>  
-      
-  </div> 
-  
-</div>
+        </div>
+      </div> 
+       
+    </div> 
+  </div>
   
   
     <!-- JavaScript -->

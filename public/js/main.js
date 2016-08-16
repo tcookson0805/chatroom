@@ -15,9 +15,11 @@ $(document).ready(function(){
   
   // messenger variables
   var messageForm;
-  var messages;  
+  var messages_left; 
+  var messages_right; 
   var messageInput;
   var userList;
+  var usersOnline;
   var message;
   
   
@@ -26,16 +28,22 @@ $(document).ready(function(){
   // sets the messager variables
   var setFormVar = function(){
     messageForm = $('.message-form');
-    messages = $('#messages');   
+    messages_left = $('#messages_left'); 
+    messages_right = $('#messages_right');
     messageInput = $('.message-input');
     userList = $('.left-panel-main');
+    usersOnline = $('.users_online');
     return;
   }
   
     
   // fn that appends a new <div> to the messages
   var addMessage = function(username, message){
-    messages.append('<div class="message"><span class="message-username">' + username + '</span>' + ': ' + message + '</div>');
+    if(username === userName){
+      messages_right.append('<div class="message-right"><span class="message-bubble"><span class="message-username">' + username + '</span>' + ': ' + message + '</span></div>');
+    }else{
+      messages_left.append('<div class="message"><span class="message-bubble"><span class="message-username">' + username + '</span>' + ': ' + message + '</span></div>');
+    }
   }
   
   var addUser = function(username){
@@ -72,6 +80,11 @@ $(document).ready(function(){
   $('body').on('keydown', messageInput, function(event){
   
     if(event.keyCode != 13){
+      
+      var isTyping = userName + ' is typing....'
+      
+      
+      
       return;
     }
     
@@ -92,6 +105,16 @@ $(document).ready(function(){
 
 ////////////////////// SOCKET LISTENERS //////////////////////
 
+  socket.on('disconnect', function(){
+    
+  })
+
+
+  
+  socket.on('usersOnline', function(data){
+    usersOnline.html(data);
+  })
+  
   
   
   // listener for the socket.broadcast.emit event so that when server sends message with name
@@ -106,7 +129,7 @@ $(document).ready(function(){
     userList.html('');
     for(var key in data){
       if(key === userName){
-        $('.username').html(key)
+        $('.header-username').html(key)
         // userList.append('<div class="user current">' + key + '</div>')
       }else{
         userList.append('<div class="user">' + key + '</div>');

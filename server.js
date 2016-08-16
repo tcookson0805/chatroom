@@ -16,24 +16,20 @@ var io = socket_io(server);
 var users = {};
 var numUsers = 0;
 
+
 // adding listener to connection event of the server
 io.on('connection', function(socket){
   
   socket.on('userName', function(userName){
     
-    // if(addedUser){
-    //   return;
-    // }
-    
-    // addedUser = true;
-    
     socket.userName = userName;
     users[userName] = true;
     console.log('users list', users);
-    numUsers ++;
+    numUsers ++
     
     // socket.broadcast.emit('userName', userName);
     io.emit('userList', users);
+    io.emit('usersOnline', numUsers);
   });
   
   
@@ -47,7 +43,14 @@ io.on('connection', function(socket){
   
   socket.on('disconnect', function(){
     delete users[socket.userName];
+    
+    numUsers--
+    
+    io.emit('userList', users);
+    io.emit('usersOnline', numUsers);
+
     console.log(socket.userName + ' disconnected');
+    console.log('number of users left', numUsers);
   });
   
 });
