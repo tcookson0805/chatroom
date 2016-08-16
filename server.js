@@ -13,9 +13,28 @@ app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 var server = http.Server(app);
 var io = socket_io(server);
 
+var users = {};
+var numUsers = 0;
+
 // adding listener to connection event of the server
 io.on('connection', function(socket){
-  console.log('Client connected');
+  
+  socket.on('userName', function(userName){
+    
+    // if(addedUser){
+    //   return;
+    // }
+    
+    // addedUser = true;
+    
+    socket.userName = userName;
+    users[userName] = true;
+    console.log('users list', users);
+    numUsers ++;
+    
+    // socket.broadcast.emit('userName', userName);
+    io.emit('userList', users);
+  });
   
   
   // added new listener to the socket which is used to communicate with the client
@@ -27,10 +46,12 @@ io.on('connection', function(socket){
   });
   
   socket.on('disconnect', function(){
-    console.log('user disconnected');
+    delete users[socket.userName];
+    console.log(socket.userName + ' disconnected');
   });
   
 });
+
 
 
 server.listen(8080, function(){

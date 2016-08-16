@@ -92,6 +92,10 @@ body {
   text-align: center;
 }
 
+.current {
+  font-weight: bold;
+}
+
 .main-panel {
   height: 100%;
 }
@@ -118,6 +122,13 @@ body {
   
 }
 
+.message {
+  
+}
+
+.message-username {
+  font-weight: bold;
+}
 
 
 
